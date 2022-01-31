@@ -13,7 +13,7 @@ def turingMachineInterpreter(state_obj_list, state_enumeration, turing_machine_i
 
         # get the next index and state based on the current state and the tape value
         (new_tape_value, next_index_increment, next_state) = state_object.executeOnRead(tape_value)
-        # ugly string replacement due to strings being immutable in python
+        # ugly char replacement due to strings being immutable in python
         turing_machine_input_str = turing_machine_input_str[:current_index] + new_tape_value + turing_machine_input_str[current_index + 1:]
         current_index += next_index_increment
         current_state = next_state
